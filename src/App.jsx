@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import NavBar from "./Components/Navbar";
 import Header from "./Components/Header";
 import Category from "./Components/Category";
+import CardList from "./Components/CardList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Container>
           <Header />
           <Category />
+          <CardList />
         </Container>
       </div>
     </>
