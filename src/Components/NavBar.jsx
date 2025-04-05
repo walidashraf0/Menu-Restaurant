@@ -1,9 +1,5 @@
 import React from "react";
-import { Row } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Form, Nav, Navbar, Row } from "react-bootstrap";
 
 const NavBar = () => {
   return (
