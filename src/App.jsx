@@ -7,23 +7,28 @@ import { varieties } from "./utils/data";
 import { useState } from "react";
 function App() {
   const [items, setItems] = useState(varieties);
+  // Get All Category Unique 
+  const allCategory = ["الكل", ...new Set(varieties.map((item) => item.category))];
 
   //Filter By Category
   const filterByCategory = (varaity) => {
     if (varaity === "الكل") {
-      setItems(items);
+      setItems(varieties);
     } else {
-      const filteredItems = varieties.filter((item) => item.category === varaity);
+      const filteredItems = varieties.filter(
+        (item) => item.category === varaity
+      );
       setItems(filteredItems);
     }
   };
+
   return (
     <>
       <div className="color-body font">
         <NavBar />
         <Container>
           <Header />
-          <Category filtering={filterByCategory} />
+          <Category filtering={filterByCategory} allCategory={allCategory} />
           <CardList itemsData={items} />
         </Container>
       </div>

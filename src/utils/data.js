@@ -51,5 +51,13 @@ export const varieties = [
         image: ImgThree,
         category: "عشاء"
     },
+    {
+        id: 6,
+        name: "سناك",
+        description: "وصف سناك: بطاطس مقلية مع صلصة كاتشب.",
+        price: 100,
+        image: ImgThree,
+        category: "سناك"
+    }
 
 ];
