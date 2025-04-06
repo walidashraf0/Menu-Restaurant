@@ -52,7 +52,7 @@ export const varieties = [
         category: "عشاء"
     },
     {
-        id: 6,
+        id: 7,
         name: "سناك",
         description: "وصف سناك: بطاطس مقلية مع صلصة كاتشب.",
         price: 100,

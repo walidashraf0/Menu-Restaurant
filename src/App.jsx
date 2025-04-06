@@ -7,8 +7,11 @@ import { varieties } from "./utils/data";
 import { useState } from "react";
 function App() {
   const [items, setItems] = useState(varieties);
-  // Get All Category Unique 
-  const allCategory = ["الكل", ...new Set(varieties.map((item) => item.category))];
+  // Get All Category Unique
+  const allCategory = [
+    "الكل",
+    ...new Set(varieties.map((item) => item.category)),
+  ];
 
   //Filter By Category
   const filterByCategory = (varaity) => {
@@ -22,10 +25,20 @@ function App() {
     }
   };
 
+  //Filter By Search
+  const filterBySearch = (word) => {
+    if (word !== "") {
+      const filteredItems = varieties.filter(
+        (item) => item.name === word
+      );
+      setItems(filteredItems);
+    }
+  };
+
   return (
     <>
       <div className="color-body font">
-        <NavBar />
+        <NavBar search={filterBySearch} />
         <Container>
           <Header />
           <Category filtering={filterByCategory} allCategory={allCategory} />

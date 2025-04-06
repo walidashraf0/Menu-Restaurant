@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, Nav, Navbar, Row } from "react-bootstrap";
 
-const NavBar = () => {
+const NavBar = ({ search }) => {
+  const [wordInput, setWordInput] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    search(wordInput);
+    setWordInput("");
+  };
+
   return (
     <Row>
       <Navbar expand="lg" bg="dark" variant="dark">
@@ -16,9 +24,17 @@ const NavBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             ></Nav>
-            <Form className="d-flex">
-              <Form.Control type="text" placeholder="ابحث.." className="mx-2" />
-              <button className="btn-search">بحث</button>
+            <Form className="d-flex" onSubmit={handleSearch}>
+              <Form.Control
+                type="text"
+                placeholder="ابحث.."
+                className="mx-2"
+                value={wordInput}
+                onChange={(e) => setWordInput(e.target.value)}
+              />
+              <button type="submit" className="btn-search">
+                بحث
+              </button>
             </Form>
           </Navbar.Collapse>
         </Container>
